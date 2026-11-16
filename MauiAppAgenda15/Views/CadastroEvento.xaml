@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppAgenda15.Views.CadastroEvento"
+             Title="Cadastro de Eventos"
+             Background="{StaticResource Gray100}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Novo Evento" 
+                   FontSize="32" 
+                   FontAttributes="Bold" 
+                   TextColor="{StaticResource Primary}" 
+                   HorizontalOptions="Center"/>
+
+            <Border Padding="15" StrokeShape="RoundRectangle 12" Stroke="{StaticResource Gray200}">
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Nome do Evento:" FontAttributes="Bold"/>
+                    <Entry x:Name="entNome" Placeholder="Ex: Conferência de Tecnologia"/>
+
+                    <Label Text="Local do Evento:" FontAttributes="Bold"/>
+                    <Entry x:Name="entLocal" Placeholder="Ex: Auditório Principal"/>
+
+                    <Label Text="Data de Início:" FontAttributes="Bold"/>
+                    <DatePicker x:Name="dtpckInicio" Format="dd/MM/yyyy"/>
+
+                    <Label Text="Data de Término:" FontAttributes="Bold"/>
+                    <DatePicker x:Name="dtpckTermino" Format="dd/MM/yyyy"/>
+
+                    <Label Text="Número de Participantes:" FontAttributes="Bold"/>
+                    <Entry x:Name="entParticipantes" Placeholder="0" Keyboard="Numeric"/>
+
+                    <Label Text="Custo por Participante (R$):" FontAttributes="Bold"/>
+                    <Entry x:Name="entCusto" Placeholder="0.00" Keyboard="Numeric"/>
+
+                    <Button Text="Avançar para o Resumo" 
+                            BackgroundColor="{StaticResource Primary}" 
+                            TextColor="White" 
+                            Clicked="OnCadastrarClicked" 
+                            HeightRequest="50"
+                            Margin="0,10,0,0"/>
+
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
